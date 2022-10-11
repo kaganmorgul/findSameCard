@@ -1,0 +1,175 @@
+.cardsArea {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  padding: 0.2rem;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(6, auto);
+  }
+  .match {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: yellow;
+    font-size: 6rem;
+    display: none;
+    transition: all 1s;
+    @media screen and (max-width: 600px) {
+      top: 42%;
+    }
+  }
+  .match.active {
+    display: block;
+  }
+
+  .denemeCardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(128, 128, 128);
+    left: -220px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    transition: all 1s;
+    background-color: rgb(243, 241, 241);
+    img {
+      width: 180px;
+      height: 180px;
+      transform: rotateY(180deg);
+    }
+    @media screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgb(128, 128, 128);
+      left: -100%;
+      top: 15%;
+      transform: translate(-50%, 0);
+      width: 80%;
+      height: 150px;
+      transition: all 1s;
+      background-color: rgb(243, 241, 241);
+      img {
+        width: 100px;
+        height: 100px;
+        transform: rotateY(180deg);
+      }
+    }
+  }
+  .denemeCardLeft.active {
+    left: 80px;
+    @media screen and (max-width: 600px) {
+      left: 50%;
+    }
+  }
+  .denemeCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    right: -220px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    transition: all 1s;
+    background-color: rgb(243, 241, 241);
+    img {
+      width: 180px;
+      height: 180px;
+    }
+    @media screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgb(128, 128, 128);
+      left: 150%;
+      top: 55%;
+      transform: translate(-50%, 0);
+      width: 80%;
+      height: 150px;
+      transition: all 1s;
+      background-color: rgb(243, 241, 241);
+      img {
+        width: 100px;
+        height: 100px;
+        transform: rotateY(180deg);
+        left: 50%;
+        top: 55%;
+      }
+    }
+  }
+  .denemeCardRight.active {
+    right: 80px;
+    @media screen and (max-width: 600px) {
+      left: 50%;
+    }
+  }
+  .completed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(88, 88, 88, 0.576);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s;
+    visibility: hidden;
+    .completedInfo {
+      width: 80%;
+      font-size: 2rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-evenly;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+        height: 80px;
+      }
+    }
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      @media screen and (max-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+    button {
+      border: none;
+      padding: 0.5rem 1rem;
+      background-color: #fff;
+      height: 30px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+  }
+  .completed.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
